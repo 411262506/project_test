@@ -27,9 +27,9 @@ public class HomeController {
         if (number == targetNumber) {
             message = "恭喜你猜對了！目標數字是：" + targetNumber;
         } else if (number < targetNumber) {
-            message = "猜錯了";
+            message = "猜錯";
         } else {
-            message = "猜錯了";
+            message = "猜錯";
         }
         model.addAttribute("message", message);
         return "index";
