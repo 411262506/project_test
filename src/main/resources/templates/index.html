@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>猜數字遊戲</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>歡迎來到猜數字遊戲！</h1>
+    <form action="/guess" method="post">
+        <label for="number">請輸入一個數字 (1-100): </label>
+        <input type="number" id="number" name="number" min="1" max="100" required>
+        <button type="submit">提交猜測</button>
+    </form>
+
+    <div>
+        <p th:text="${message}">這裡會顯示提示訊息</p>
+    </div>
+</body>
+</html>
