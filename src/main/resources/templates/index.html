@@ -2,19 +2,27 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>猜數字遊戲</title>
+    <title>末日地下城對抗</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>歡迎來到猜數字遊戲！</h1>
-    <form action="/guess" method="post">
-        <label for="number">請輸入一個數字 (1-100): </label>
-        <input type="number" id="number" name="number" min="1" max="100" required>
-        <button type="submit">提交猜測</button>
-    </form>
+    <h1>末日地下城對抗</h1>
+    
+    <a href="/create-character"><button>開始遊戲</button></a>
+    <button onclick="showDescription()">說明</button>
 
-    <div>
-        <p th:text="${message}">這裡會顯示提示訊息</p>
+    <div id="description" style="display: none; margin-top: 20px;">
+        <p>這是一款刺激的地下城對抗遊戲，探索末日世界，挑戰強大敵人！</p>
     </div>
+
+    <div class="team-info">
+        <p>開發團隊: 背道而行</p>
+    </div>
+
+    <script>
+        function showDescription() {
+            document.getElementById("description").style.display = "block";
+        }
+    </script>
 </body>
 </html>

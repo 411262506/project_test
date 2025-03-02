@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>選擇角色</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>選擇你的角色</h1>
+
+    <!-- 頭貼選擇 -->
+    <div class="avatar-container">
+        <p>選擇一個頭貼：</p>
+        <div class="avatars">
+            <!-- 使用 Thymeleaf 迭代後端傳來的隨機顏色 -->
+            <div th:each="color : ${colors}" class="avatar"
+                 th:style="'background-color: ' + ${color}"
+                 th:data-color="${color}"
+                 onclick="selectAvatar(this)">
+            </div>
+        </div>
+    </div>
+
+    <!-- 名稱輸入 -->
+    <p>輸入你的名稱：</p>
+    <input type="text" id="player-name" placeholder="請輸入角色名稱">
+    
+    <!-- 確認按鈕 -->
+    <button onclick="confirmCharacter()">確認</button>
+
+    <script>
+        let selectedAvatar = null;
+
+        function selectAvatar(element) {
+            // 取消之前選中的頭貼
+            if (selectedAvatar) {
+                selectedAvatar.classList.remove("selected");
+            }
+            selectedAvatar = element;
+            selectedAvatar.classList.add("selected");
+        }
+
+        function confirmCharacter() {
+            let name = document.getElementById("player-name").value;
+            if (!name) {
+                alert("請輸入名稱！");
+                return;
+            }
+            if (!selectedAvatar) {
+                alert("請選擇一個頭貼！");
+                return;
+            }
+            alert("角色選擇完成！名稱：" + name);
+        }
+    </script>
+</body>
+</html>

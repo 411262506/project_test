@@ -1,58 +1,85 @@
-/* 基本頁面樣式 */
+/* 設定整體樣式 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    background-color: #1e1e1e;
+    color: white;
     text-align: center;
+    margin: 0;
+    padding: 50px;
 }
 
 /* 標題樣式 */
 h1 {
-    color: #2e8b57;
-    margin-top: 50px;
-}
-
-/* 表單樣式 */
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    width: 300px;
-}
-
-/* 輸入框樣式 */
-input[type="number"] {
-    padding: 8px;
-    width: 80%;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
+    font-size: 36px;
+    color: #ffcc00;
 }
 
 /* 按鈕樣式 */
 button {
-    padding: 10px 20px;
-    background-color: #2e8b57;
-    color: #fff;
+    background-color: #ff6600;
+    color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* 按鈕滑鼠懸停效果 */
-button:hover {
-    background-color: #3cb371;
-}
-
-/* 顯示訊息區塊 */
-div {
-    margin-top: 20px;
+    padding: 15px 30px;
     font-size: 18px;
-    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #cc5500;
+}
+
+/* 說明文字區塊 */
+#description {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 8px;
+}
+
+/* 開發團隊資訊 */
+.team-info {
+    margin-top: 50px;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* 角色選擇頁面樣式 */
+.avatars {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: transform 0.2s;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.selected {
+    border: 3px solid yellow;
+}
+
+/* 名稱輸入框 */
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+}
+
+/* 確認按鈕 */
+button {
+    margin-top: 20px;
 }

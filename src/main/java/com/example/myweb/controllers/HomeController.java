@@ -3,35 +3,32 @@ package com.example.myweb.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
 import java.util.Random;
 
 @Controller
 public class HomeController {
 
-    private final Random random = new Random();
-
-    // 設定目標數字範圍
-    private final int targetNumber = random.nextInt(100) + 1;
-
     @GetMapping("/")
     public String home() {
-        return "index";
+        return "index"; // 對應 index.html
     }
 
-    @PostMapping("/guess")
-    public String guess(@RequestParam("number") int number, Model model) {
-        String message;
-        if (number == targetNumber) {
-            message = "恭喜你猜對了！目標數字是：" + targetNumber;
-        } else if (number < targetNumber) {
-            message = "猜錯";
-        } else {
-            message = "猜錯";
-        }
-        model.addAttribute("message", message);
-        return "index";
+    @GetMapping("/create-character")
+    public String createCharacter(Model model) {
+        // 生成 5 個固定顏色的頭貼
+    List<String> colors = List.of(
+    "紅", "橙", "黃", "綠", "藍"
+    );
+
+        
+        model.addAttribute("colors", colors);
+        return "create-character"; // 對應 create-character.html
+    }
+
+    private String getRandomColor() {
+        Random rand = new Random();
+        return String.format("#%02X%02X%02X", rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
     }
 }
